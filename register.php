@@ -20,9 +20,10 @@
 	<div id="container">
 		<form method="post">
 			<input id="user_name" onkeyup="check_user()" name="user_name" class="input" type="text" placeholder="Username" required>
+			<div id="checking"></div>
 			<br><br>
 
-			<div id="checking"></div>
+			
 
 			<input name="password" class="input" type="password" placeholder="Password" required>
 			<br><br>
@@ -40,7 +41,7 @@
 		$r = mysqli_query($con, $q);
 
 		if ($r) {
-			echo "success";
+				header("location:login.php");
 		}
 		else{
 			echo $q;
