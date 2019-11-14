@@ -33,7 +33,7 @@ a, p{
 	width: 69%;
 	border: 1px solid #efefef;
 }
-#left-col-container{
+#left-col-container, #right-col-container{
 	width: 100%;
 	height: 100%;
 	margin: 0px auto;
@@ -52,3 +52,53 @@ a, p{
 	width: 50px;
 	height: 50px;
 	float: left;
+}
+#messages-container{
+		height: 85%;
+		overflow: auto;
+	}
+	.textarea{
+		width: 99%;
+		height: 10%;
+		position: absolute;
+		bottom: 1%;
+	}
+.grey-message, .white-message{
+		border: 1px solid black;
+		width: 96%;
+		padding: 5px;
+		margin: 0px auto;
+		margin-top: 2px;
+		overflow: auto;
+	}
+	.grey-message{
+		background: #efefefef;
+	}
+#new-message{
+		display: none;
+		box-shadow:2px 10px 30px #000000;
+		width: 500px;
+		position: fixed;
+		top: 20%;
+		background: white;
+		z-index: 2;
+		left: 50%;
+		transform: translate(-50%, 0);
+		border-radius: 2px;
+		overflow: auto;
+	}
+	.m-header, .m-footer{
+		background: #233070;
+		margin:0px;
+		color: white;
+	}
+	.m-header{
+		font-size: 20px;
+		text-align: center;
+	}
+	.m-body{
+		padding: 5px;
+	}
+	.message-input{
+		width: 96%;
+	}
