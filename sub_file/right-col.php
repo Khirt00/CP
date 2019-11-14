@@ -66,6 +66,33 @@
 	
 	</div>
 		
-	
+	<form method="post" id="message_form">
 	<textarea id="message_text" class="textarea" placeholder="Write your message"></textarea>
+	</form>
 </div>
+<script src="sub_file/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$("document").ready(function(event){
+
+		$("#right-col-container").on('submit', '#message_form', function(){
+			var message_text = $("#message_text").val();
+			$.post("sub/file/sending_process.php?user=<?php echo $_GET['user']; ?>",
+				{
+					text: message_text,
+				},
+
+				function(data, status){
+					$("#message_text").val("");
+					document.getElementById("messages-container").innerHTML += data;
+				}
+
+				);
+		});
+
+		$("#right-col-container").keypress(function(e){
+			if (e.keyCode == 13 && !e.shiftKey) {
+				$("#message_form").submit();
+			}
+		})
+	});
+</script>
